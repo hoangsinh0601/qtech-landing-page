@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Qtech Solutions CO., Ltd",
-  description: "Modern & Minimal JS Mastery Portfolio",
+  description: "",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/qtech-logo.png" sizes="any" />
+        <link rel="icon" href="/Logo Qtech-1.png" sizes="any" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
