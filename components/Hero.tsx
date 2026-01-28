@@ -14,7 +14,7 @@ const Hero = () => {
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="white"
+          fill="black"
         />
         <Spotlight
           className="h-[80vh] w-[50vw] top-10 left-full"
@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            QTECH SOLUTIONS CO.,LTD
           </p>
 
           {/**
@@ -52,17 +52,18 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words="Hiện Thực Hóa Ý Tưởng - Đột Phá Công Nghệ"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
+            Chuyên gia công phần mềm, thiết kế website và phát triển sản phẩm
+            công nghệ chất lượng cao.
           </p>
 
           <a href="#about">
             <MagicButton
-              title="Show my work"
+              title="Xem Dịch Vụ"
               icon={<FaLocationArrow />}
               position="right"
             />
