@@ -67,4 +67,4 @@ export default function SceneView({
   );
 }
 
-useGLTF.preload("/scene.gltf");
+// useGLTF.preload("/scene.gltf");

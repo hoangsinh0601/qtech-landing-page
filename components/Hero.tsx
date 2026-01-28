@@ -1,9 +1,19 @@
-import { FaLocationArrow } from "react-icons/fa6";
+import dynamic from "next/dynamic";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import SceneView from "./SceneView";
+import { FaLocationArrow } from "react-icons/fa6";
+
+// Dynamic import để tránh SSR error với Three.js
+const SceneView = dynamic(() => import("./SceneView"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[300px] w-full bg-transparent rounded-md flex items-center justify-center">
+      <div className="text-white/50">Loading 3D Model...</div>
+    </div>
+  ),
+});
 
 const Hero = () => {
   return (
