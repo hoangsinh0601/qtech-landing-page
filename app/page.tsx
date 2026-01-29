@@ -19,9 +19,13 @@ const Home = () => {
 
   const handleNavClick = (item: any) => {
     if (item.link.includes("#")) {
-      setHasHash(true);
+      setTimeout(() => {
+        setHasHash(true);
+      }, 500);
     } else {
-      setHasHash(false);
+      setTimeout(() => {
+        setHasHash(false);
+      }, 500);
     }
   };
 
