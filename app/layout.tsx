@@ -3,12 +3,22 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Qtech Solutions CO., Ltd",
-  description: "",
+  title: "QTech Solutions - Đối Tác Outsourcing & Công Nghệ Tín Uy",
+  description:
+    "QTech cung cấp giải pháp Outsourcing phần mềm toàn diện, tối ưu chi phí. Đối tác công nghệ tin cậy, quy trình chuẩn quốc tế, giúp doanh nghiệp bứt phá.",
+  keywords: [
+    "qtech",
+    "outsourcing",
+    "công nghệ",
+    "phát triển phần mềm",
+    "thiết kế website",
+    "qtech solutions",
+  ],
 };
 
 export default function RootLayout({
@@ -29,6 +39,7 @@ export default function RootLayout({
           forcedTheme="light"
           disableTransitionOnChange
         >
+          <JsonLd />
           {children}
         </ThemeProvider>
       </body>
