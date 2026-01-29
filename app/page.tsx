@@ -11,9 +11,8 @@ import Clients from "@/components/Clients";
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
+// import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
-// ... imports unchanged
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import { AnimatePresence } from "framer-motion";
 
@@ -22,30 +21,30 @@ const Home = () => {
   const [hasHash, setHasHash] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleNavClick = (item: any) => {
-    if (item.link.includes("#")) {
-      setTimeout(() => {
-        setHasHash(true);
-      }, 500);
-    } else {
-      setTimeout(() => {
-        setHasHash(false);
-      }, 500);
-    }
-  };
+  // const handleNavClick = (item: any) => {
+  //   if (item.link.includes("#")) {
+  //     setTimeout(() => {
+  //       setHasHash(true);
+  //     }, 500);
+  //   } else {
+  //     setTimeout(() => {
+  //       setHasHash(false);
+  //     }, 500);
+  //   }
+  // };
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      setHasHash(!!window.location.hash);
-    };
+  // useEffect(() => {
+  //   const handleHashChange = () => {
+  //     setHasHash(!!window.location.hash);
+  //   };
 
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
+  //   handleHashChange();
+  //   window.addEventListener("hashchange", handleHashChange);
 
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, [pathname]);
+  //   return () => {
+  //     window.removeEventListener("hashchange", handleHashChange);
+  //   };
+  // }, [pathname]);
 
   return (
     <main
@@ -58,7 +57,7 @@ const Home = () => {
       </AnimatePresence>
 
       <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} onNavClick={handleNavClick} />
+        {/* <FloatingNav navItems={navItems} onNavClick={handleNavClick} /> */}
         <Hero onLoadComplete={() => setIsLoading(false)} />
         <Grid />
         <RecentProjects />

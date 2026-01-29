@@ -24,7 +24,7 @@ const LoadingScreen = () => {
             className="w-32 h-32 relative preserve-3d"
           >
             {/* Coin Face */}
-            <div className="absolute inset-0 rounded-full border-4 border-purple shadow-[0_4px_10px_rgba(0,0,0,0.1)] overflow-hidden bg-white flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full border-4 border-blue-500 shadow-[0_4px_10px_rgba(0,0,0,0.1)] overflow-hidden bg-white flex items-center justify-center">
               <Image
                 src="/Logo Qtech-1.png"
                 alt="Qtech Logo"

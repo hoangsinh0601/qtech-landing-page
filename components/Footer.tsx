@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Sẵn sàng <span className="text-purple">nâng tầm</span> doanh nghiệp
+          Sẵn sàng <span className="text-blue-500">nâng tầm</span> doanh nghiệp
           của bạn?
         </h1>
         <p className="text-neutral-500 md:mt-10 my-5 text-center">

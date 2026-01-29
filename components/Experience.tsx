@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <div className="py-20 w-full">
       <h1 className="heading">
-        Năng Lực & <span className="text-purple">Kinh Nghiệm</span>
+        Năng Lực & <span className="text-blue-500">Kinh Nghiệm</span>
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">

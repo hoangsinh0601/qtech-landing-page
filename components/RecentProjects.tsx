@@ -9,7 +9,7 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        Sản Phẩm & <span className="text-purple">Dịch Vụ Nổi Bật</span>
+        Sản Phẩm & <span className="text-blue-500">Dịch Vụ Nổi Bật</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
@@ -62,10 +62,10 @@ const RecentProjects = () => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-blue-500">
                     Xem Chi Tiết
                   </p>
-                  <FaLocationArrow className="ms-3" color="#6929c4" />
+                  <FaLocationArrow className="ms-3" color="#3b82f6" />
                 </div>
               </div>
             </PinContainer>
