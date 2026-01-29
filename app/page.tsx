@@ -57,31 +57,31 @@ const Home = () => {
 
       <div className="max-w-7xl w-full">
         {/* <FloatingNav navItems={navItems} onNavClick={handleNavClick} /> */}
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="fade-up">
           <Hero onLoadComplete={() => setIsLoading(false)} />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="zoom-in">
           <Grid />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="fade-up">
           <RecentProjects />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="slide-in-right">
           <Clients />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="fade-up">
           <Experience />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="zoom-in">
           <Approach />
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="fade-up">
           <Footer />
         </ScrollAnimationWrapper>
       </div>
