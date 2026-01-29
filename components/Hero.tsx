@@ -14,9 +14,16 @@ const SceneView = dynamic(() => import("./SceneView"), {
   ),
 });
 
-const Hero = () => {
+// ... imports unchanged
+
+interface HeroProps {
+  onLoadComplete?: () => void;
+}
+
+const Hero = ({ onLoadComplete }: HeroProps) => {
   return (
     <div className="pb-20 pt-36">
+      {/* ... Spotlights unchanged ... */}
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -45,6 +52,7 @@ const Hero = () => {
             modelScale={10}
             cameraPosition={[0, 0, 5]}
             containerClassName="h-[300px] w-full bg-transparent rounded-md"
+            onLoadComplete={onLoadComplete}
           />
 
           <TextGenerateEffect

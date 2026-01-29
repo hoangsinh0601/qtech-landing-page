@@ -13,9 +13,14 @@ import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
+// ... imports unchanged
+import LoadingScreen from "@/components/ui/LoadingScreen";
+import { AnimatePresence } from "framer-motion";
+
 const Home = () => {
   const pathname = usePathname();
   const [hasHash, setHasHash] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleNavClick = (item: any) => {
     if (item.link.includes("#")) {
@@ -48,9 +53,13 @@ const Home = () => {
         hasHash ? "pt-[250px] pb-[-250px]" : ""
       }`}
     >
+      <AnimatePresence>
+        {isLoading && <LoadingScreen key="loading-screen" />}
+      </AnimatePresence>
+
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} onNavClick={handleNavClick} />
-        <Hero />
+        <Hero onLoadComplete={() => setIsLoading(false)} />
         <Grid />
         <RecentProjects />
         <Clients />

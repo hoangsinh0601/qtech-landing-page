@@ -1,22 +1,30 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
   PerspectiveCamera,
   Environment,
+  useProgress,
 } from "@react-three/drei";
 
 interface ModelProps {
   scale?: number;
   position?: [number, number, number];
+  onLoad?: () => void;
 }
 
-function Model({ scale = 50, position = [0, 0, 0] }: ModelProps) {
-  // Đường dẫn đến file GLTF trong thư mục public
+function Model({ scale = 50, position = [0, 0, 0], onLoad }: ModelProps) {
   const { scene } = useGLTF("/scene.gltf");
+  const { progress } = useProgress();
+
+  useEffect(() => {
+    if (progress === 100 && onLoad) {
+      onLoad();
+    }
+  }, [progress, onLoad]);
 
   return <primitive object={scene} scale={scale} position={position} />;
 }
@@ -28,6 +36,7 @@ interface SceneViewProps {
   enableAutoRotate?: boolean;
   enableZoom?: boolean;
   containerClassName?: string;
+  onLoadComplete?: () => void;
 }
 
 export default function SceneView({
@@ -37,6 +46,7 @@ export default function SceneView({
   enableAutoRotate = true,
   enableZoom = false,
   containerClassName = "h-[500px] w-full bg-gradient-to-br from-slate-900 to-slate-700",
+  onLoadComplete,
 }: SceneViewProps) {
   return (
     <div className={containerClassName}>
@@ -51,7 +61,11 @@ export default function SceneView({
         <Environment preset="city" />
 
         <Suspense fallback={null}>
-          <Model scale={modelScale} position={modelPosition} />
+          <Model
+            scale={modelScale}
+            position={modelPosition}
+            onLoad={onLoadComplete}
+          />
         </Suspense>
 
         <OrbitControls
@@ -66,5 +80,3 @@ export default function SceneView({
     </div>
   );
 }
-
-// useGLTF.preload("/scene.gltf");
